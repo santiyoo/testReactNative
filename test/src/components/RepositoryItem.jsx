@@ -1,16 +1,13 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native'
-import StyledText from './StyledText';
+import {View, StyleSheet, Image} from 'react-native'
+import RepositoryStats from './RepositoryStats.jsx';
+import RepositoryItemHeader from './RepositoryItemHeader.jsx'
 
 const RepositoryItem = (props) => {
     return (  
         <View key={props.id} style={styles.container}>
-            <StyledText fontSize='subheading' fontWeight='bold'>FullName: {props.fullName}</StyledText>
-            <StyledText bold>Descripcion: {props.descripcion}</StyledText>
-            <StyledText blue>Language: {props.language}</StyledText>
-            <StyledText small>stargazersCount: {props.stargazersCount}</StyledText>
-            <StyledText small>ratingAvarage: {props.ratingAvarage}</StyledText>
-            <StyledText small>reviewCount: {props.reviewCount}</StyledText>            
+            <RepositoryItemHeader {...props}/>
+            <RepositoryStats {...props}/>       
         </View>
     );
 }
@@ -18,8 +15,7 @@ const RepositoryItem = (props) => {
 const styles = StyleSheet.create({
     container:{
         padding: 20,
-        paddingBotton: 5,
-        paddingTop: 5
+        paddingVertical: 5 //Para ponerle paddingTop + paddingBottom fusionado
     }
 })
  

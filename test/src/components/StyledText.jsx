@@ -5,7 +5,7 @@ import theme from '../theme.js'
 const styles = StyleSheet.create({
     text: {
         fontSize: theme.fontSizes.body,
-        color: theme.colors.TextPrimary,
+        color: theme.colors.textPrimary,
         fontFamily: theme.fonts.main,
         fontWeight: theme.fontWeights.normal
     },
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         fontWeight: theme.fontWeights.bold
     },
     colorPrimary: {
-        color: theme.colors.textPrimary
+        color: theme.colors.primary
     },
     colorSecondary: {
         color: theme.colors.textSecondary
@@ -21,20 +21,24 @@ const styles = StyleSheet.create({
     subheading: {
         fontSize: theme.fontSizes.subheading,
 
+    },
+    textAlignCenter: {
+        textAlign: 'center'
     }
 })
  
-export default function StyledText ({children, color, fontSize, fontWeight, style, ...restOfProps}){
-    const textSyles = [
+export default function StyledText ({ children, align, color, fontSize, fontWeight, style, ...restOfProps}){
+    const textStyles = [
         styles.text,
+        align === 'center' && styles.textAlignCenter,
         color === 'primary' && styles.colorPrimary,
         color === 'secondary' && styles.colorSecondary,
         fontSize === 'subheading' && styles.subheading,
-        fontWeight === 'primary' && styles.nold,
-        
+        fontWeight === 'bold' && styles.bold,
+        style
     ]
     return(
-        <Text style={textStyles}>
+        <Text style={textStyles} {...restOfProps}>
             {children}
         </Text>
     )
