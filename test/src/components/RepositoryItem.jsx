@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, StyleSheet, Image} from 'react-native'
+import React from "react";
+import {View, StyleSheet} from 'react-native'
 import RepositoryStats from './RepositoryStats.jsx';
 import RepositoryItemHeader from './RepositoryItemHeader.jsx'
 
