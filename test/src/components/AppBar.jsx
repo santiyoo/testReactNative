@@ -5,7 +5,7 @@ import Constants from 'expo-constants'
 import theme from '../theme.js'
 import { Link } from "react-router-native";
 
-const AppBarTab = ({active, children, to}) => {
+const AppBarTab = ({ active, children, to}) => {
     return(
         <Link to={to}>
             <StyledText fontWeight='bold' style={styles.text}>

@@ -1,8 +1,8 @@
 import React from "react";
 import {View, Text} from 'react-native'
-import RepositoryList from "./RepositoryList";
+import RepositoryList from "./RepositoryList.jsx";
 import AppBar from "./AppBar.jsx";
-import {Switch, Route, Redirect} from 'react-router-native'
+import {Redirect, Switch, Route} from 'react-router-native'
 
 const Main = () => {
     return(
