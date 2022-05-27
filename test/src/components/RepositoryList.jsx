@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, FlatList, View} from 'react-native';
+import {Text, FlatList} from 'react-native';
 import Repositories from "../data/Repositories.js";
 import RepositoryItem from "./RepositoryItem.jsx";
 
